@@ -1,0 +1,12 @@
+<?php
+
+use classes\Game;
+
+spl_autoload_register(function ($class) {
+    $class = str_replace('\\', '/', $class);
+
+    require_once $class . '.php';
+});
+
+$universe = new Game();
+$universe->start();
